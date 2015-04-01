@@ -1,4 +1,4 @@
-app.controller('MainController', function ($scope, whateverName, FlashCardsFactory, ScoreFactory) {
+app.controller('MainController', function ($scope, FlashCardsFactory, ScoreFactory) {
 	FlashCardsFactory.getFlashCards().then(function (data) {
 		$scope.flashCards = data;
 	});
