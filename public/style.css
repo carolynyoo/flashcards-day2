@@ -14,6 +14,12 @@
     font-size: 40px;
     text-align: center;
     margin-bottom: 40px; }
+  .flash-card h3 {
+    text-align: center;
+    text-transform: uppercase;
+    color: #ccc;
+    padding-bottom: 20px;
+  }
   .flash-card .flash-card-answers {
     width: 100%;
     margin: 0 auto;
@@ -53,6 +59,10 @@
   text-align: center;
 }
 
+.active {
+  background-color: #000;
+}
+
 .category-button {
   border: 1px solid #ccc;
   background-color: #fff;
@@ -61,3 +71,23 @@
   font-size: 30px;
   text-transform: uppercase;
 }
+
+#statistics {
+  padding: 40px; }
+  #statistics:before, #statistics:after {
+    content: " ";
+    /* 1 */
+    display: table;
+    /* 2 */ }
+  #statistics:after {
+    clear: both; }
+  #statistics #scoreboard {
+    float: right;
+    margin: 0 auto; }
+    #statistics #scoreboard h3 {
+      margin-right: 40px;
+      float: left; }
+      #statistics #scoreboard h3:last-child {
+        margin-right: 0; }
+      #statistics #scoreboard h3 span {
+        font-weight: bold; }

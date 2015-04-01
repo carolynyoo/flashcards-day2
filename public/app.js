@@ -20,6 +20,13 @@ app.factory('FlashCardsFactory', function ($http) {
      };
 });
 
+app.factory('ScoreFactory', function () {
+    return {
+        correct: 0,
+        incorrect: 0
+    };
+});
+
 app.value('whateverName', [
     {
         question: 'C. What is Angular?',
