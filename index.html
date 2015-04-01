@@ -16,7 +16,7 @@
 
         <div ng-controller="MainController">
             <div class="buttons">
-                <button class="category-button" ng-repeat="cat in categories" ng-click="getCategoryCards(cat)" ng-class="{'active': active===true}">{{cat}}</button>
+                <button class="category-button" ng-repeat="cat in categories" ng-click="getCategoryCards(cat)" ng-class="{'active': active===cat}">{{cat}}</button>
                 <button class="category-button" ng-click="getCategoryCards()">Reset</button>
             </div>
            	<div        
