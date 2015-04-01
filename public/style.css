@@ -46,3 +46,18 @@
     color: green; }
   .answer-feedback.incorrect {
     color: red; }
+
+.buttons {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.category-button {
+  border: 1px solid #ccc;
+  background-color: #fff;
+  padding: 10px;
+  margin-right: 10px;
+  font-size: 30px;
+  text-transform: uppercase;
+}
