@@ -3,12 +3,12 @@ app.controller('MainController', function ($scope, whateverName, FlashCardsFacto
 		$scope.flashCards = data;
 	});
 
-	$scope.active = false;
+	$scope.active = "";
 
 	$scope.getCategoryCards = function (category) {
 		FlashCardsFactory.getFlashCards(category).then(function (data) {
 			$scope.flashCards = data;
-			$scope.active = true;
+			$scope.active = category;
 		});
 	}
 
