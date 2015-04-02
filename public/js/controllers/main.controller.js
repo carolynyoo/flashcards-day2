@@ -1,4 +1,4 @@
-app.controller('MainController', function ($scope, whateverName, FlashCardsFactory, ScoreFactory) {
+app.controller('MainController', function ($scope, FlashCardsFactory, ScoreFactory) {
 	FlashCardsFactory.getFlashCards().then(function (data) {
 		$scope.flashCards = data;
 	});
@@ -34,3 +34,14 @@ app.controller('MainController', function ($scope, whateverName, FlashCardsFacto
 		}
 	}
 });
+
+app.filter('cheat', function() {
+
+	return function(collection) {
+		return collection.filter(function(element) {
+			return element.correct;
+		})
+	}
+})
+
+
