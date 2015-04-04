@@ -3,6 +3,7 @@ app.controller('MainController', function ($scope, FlashCardsFactory, ScoreFacto
 
 	$scope.getCards = function (category) {
 		$scope.flashCards = null;
+		$scope.error = null;
 		FlashCardsFactory.getFlashCards(category).then(function (data) {
 			$scope.flashCards = data;
 			$scope.active = category;
