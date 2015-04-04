@@ -3,11 +3,11 @@ app.directive('borderOnHover', function () {
     restrict: 'A', 
     link: function (scope, elem, attrs) {
       elem.on('mouseenter', function () {
-        elem.addClass('btn-hover');
+        elem.attr('id', 'btn-hover');
       }); 
 
       elem.on('mouseleave', function () {
-        elem.removeClass('btn-hover');
+        elem.attr('id', '');
       })
     }
   }
