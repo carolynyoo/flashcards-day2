@@ -114,3 +114,7 @@
 flash-card {
   display: block;
 }
+
+.btn-hover {
+  border: 2px solid black;
+}

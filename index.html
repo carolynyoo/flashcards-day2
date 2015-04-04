@@ -16,7 +16,7 @@
             <div ng-show="flashCards">
                 <div class="buttons" ng-include="'templates/categories.html'">
                 </div>
-                 <flash-card ng-repeat="flashCard in flashCards | orderBy:'question'"
+                 <flash-card card="flashCard" ng-repeat="flashCard in flashCards | orderBy:'question'"
                  class="flash-card">
                  </flash-card>
             </div>
@@ -29,5 +29,6 @@
         <script src="/js/factories/ScoreFactory.js"></script>
         <script src="/js/directives/loader/loader.js"></script>
         <script src="/js/directives/flashCard/flashCard.js"></script>
+        <script src="/js/directives/borderOnHover.js"></script>
     </body>
 </html>
