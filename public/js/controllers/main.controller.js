@@ -1,17 +1,15 @@
 app.controller('MainController', function ($scope, FlashCardsFactory, ScoreFactory) {
-	FlashCardsFactory.getFlashCards().then(function (data) {
-		$scope.flashCards = data;
-	});
-
 	$scope.active = "";
 
-	$scope.getCategoryCards = function (category) {
+	$scope.getCards = function (category) {
+		$scope.flashCards = null;
 		FlashCardsFactory.getFlashCards(category).then(function (data) {
 			$scope.flashCards = data;
 			$scope.active = category;
+		}).catch(function (err) {
+			$scope.error = err;
 		});
 	}
-
 
 	$scope.categories = [
 	    'MongoDB',
@@ -21,6 +19,8 @@ app.controller('MainController', function ($scope, FlashCardsFactory, ScoreFacto
 	];
 
 	$scope.scores = ScoreFactory;
+
+	$scope.getCards(); 
 });
 
 app.filter('cheat', function() {

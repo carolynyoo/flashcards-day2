@@ -27,7 +27,7 @@
 .flash-card {
 
   width: 60%;
-  height: 400px;
+  height: 450px;
   margin: 0 auto;
   margin-top: 40px;
   border: 1px solid black;
@@ -104,4 +104,11 @@
 
   }
 
+}
+
+.loader {
+  text-align: center;
+}
+#btn-hover {
+  border: 2px solid black;
 }

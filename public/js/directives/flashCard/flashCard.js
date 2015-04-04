@@ -1,4 +1,4 @@
-app.directive('flashCard', ['ScoreFactory', function (ScoreFactory) {
+app.directive('flashCard', function (ScoreFactory) {
   return {
     restrict: 'E', 
     scope: {
@@ -24,4 +24,4 @@ app.directive('flashCard', ['ScoreFactory', function (ScoreFactory) {
       }
     }
   }
-}])
+})

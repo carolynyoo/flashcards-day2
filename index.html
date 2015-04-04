@@ -10,14 +10,17 @@
         <div ng-controller="StatsController" id="statistics" ng-include="'templates/statistics.html'">
         </div>  
         <div ng-controller="MainController">
+            <div class="buttons" ng-include="'templates/categories.html'">
+            </div>
             <div class="loader">
-                <loader ng-show="!flashCards"></loader>
+                <loader ng-hide="flashCards || error"></loader>
+                <div ng-show="error">
+                    <h2>Failed to get cards!</h2>
+                    <pre>HTTP Status: {{error.status}}</pre>
+                </div>
             </div>
             <div ng-show="flashCards">
-                <div class="buttons" ng-include="'templates/categories.html'">
-                </div>
-                 <flash-card card="flashCard" ng-repeat="flashCard in flashCards | orderBy:'question'"
-                 class="flash-card">
+                 <flash-card card="flashCard" ng-repeat="flashCard in flashCards | orderBy:'question'">
                  </flash-card>
             </div>
         </div>
