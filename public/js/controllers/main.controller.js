@@ -21,18 +21,6 @@ app.controller('MainController', function ($scope, FlashCardsFactory, ScoreFacto
 	];
 
 	$scope.scores = ScoreFactory;
-
-	$scope.answerQuestion = function (answer, flashCard) {
-		if (!flashCard.answered) {
-			flashCard.answered = true;
-			flashCard.answeredCorrectly = answer.correct;
-			if (flashCard.answeredCorrectly) {
-				$scope.scores['correct']+=1;
-			} else {
-				$scope.scores['incorrect']+=1;
-			}
-		}
-	}
 });
 
 app.filter('cheat', function() {
