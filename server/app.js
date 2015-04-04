@@ -53,13 +53,16 @@ app.get('/cards', function (req, res) {
 
 });
 
-app.post('/cards', function (req, res) {
+app.post('/cards', function (req, res, next) {
 
     // Reference schema for what is expected as the POST body.
     var cardData = req.body;
-
-    FlashCardModel.create(cardData).then(function () {
-        res.status(200).end();
+    console.log(cardData);
+    
+    FlashCardModel.create(cardData, function (err, card) {
+        if (err) return next(err);
+        res.json(card);
     });
+
 
 });
