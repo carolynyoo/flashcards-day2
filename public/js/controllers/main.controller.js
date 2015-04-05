@@ -1,5 +1,10 @@
 app.controller('MainController', function ($scope, FlashCardsFactory, ScoreFactory) {
 	$scope.active = "";
+  $scope.formOn = false;
+
+  $scope.toggleForm = function () {
+  	$scope.formOn = !$scope.formOn;
+  }
 
 	$scope.getCards = function (category) {
 		$scope.flashCards = null;

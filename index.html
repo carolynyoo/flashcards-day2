@@ -9,8 +9,6 @@
     <body ng-app="flashCards">
         <div ng-controller="StatsController" id="statistics" ng-include="'templates/statistics.html'">
         </div>  
-        <div ng-controller="FlashFormController" ng-include="'templates/form.html'">
-        </div>
         <div ng-controller="MainController">
             <div class="buttons" ng-include="'templates/categories.html'">
             </div>
@@ -21,7 +19,9 @@
                     <pre>HTTP Status: {{error.status}}</pre>
                 </div>
             </div>
-            <div ng-show="flashCards">
+            <div class="flashForm" ng-include="'templates/form.html'" ng-show="formOn">
+            </div>
+            <div ng-show="flashCards" ng-hide="formOn">
                  <flash-card card="flashCard" ng-repeat="flashCard in flashCards | orderBy:'question'">
                  </flash-card>
             </div>

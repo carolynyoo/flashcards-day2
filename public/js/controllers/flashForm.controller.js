@@ -16,11 +16,14 @@ app.controller('FlashFormController', function ($scope, FlashFormFactory) {
   }
 
   $scope.submitFlashForm = function (q, c, a) {
+    // $scope.formOn = false;
+
     var flashData = {
       question: q,
       category: c,
       answers: a
     }
+
     FlashFormFactory.sendFlashCard(flashData).then(function (response) {
       console.log(response);
     }).catch(function (err) {

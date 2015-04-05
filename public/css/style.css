@@ -113,3 +113,11 @@
 #btn-hover {
   border: 2px solid black;
 }
+
+.flashForm {
+  display: block;
+  text-align: center;
+  font-family: Helvetica;
+  padding: 50px;
+  line-height: 20px;
+}
