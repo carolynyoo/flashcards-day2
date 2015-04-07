@@ -1,10 +1,10 @@
 <form ng-controller="FlashFormController" name="FlashForm" novalidate ng-submit="" ng-minlength="10">
-{{ body | json }}
+{{ formObj | json }}<br/>
 <label>Question</label><br/>
-<input size="50" type="text" ng-model="question" required><br/>
+<input size="50" type="text" ng-model="formObj.question" required><br/>
 
 <label>Category</label><br/>
-<select type="text" ng-model="category" required>
+<select type="text" ng-model="formObj.category" required>
 <option>MongoDB</option>
 <option>Express</option>
 <option>Angular</option>
@@ -14,12 +14,12 @@ Answers: <br/>
 
 <div ng-repeat="n in [0, 1, 2]">
   <label>{{n+1}}.</label>
-  <input size="50" type="text" ng-model="answers[n].text" required> 
-  <label>True</label><input type="radio" ng-model="answers[n].correct" ng-value="true" ng-change="changeAnswer(n)"> 
-  <label>False</label><input type="radio" ng-model="answers[n].correct" ng-value="false"><br/>
+  <input size="50" type="text" ng-model="formObj.answers[n].text" required> 
+  <label>True</label><input type="radio" ng-model="formObj.answers[n].correct" ng-value="true" ng-change="changeAnswer(n)"> 
+  <label>False</label><input type="radio" ng-model="formObj.answers[n].correct" ng-value="false"><br/>
 </div>
 
-<input type="submit" ng-click="FlashForm.$valid && submitFlashForm(question, category, answers)" value="Save">
+<input type="submit" ng-click="FlashForm.$valid && submitFlashForm(formObj)" value="Save">
 
 <pre ng-show="FlashForm.$error">Ready to Submit? {{FlashForm.$valid}}</pre>
 
