@@ -1,7 +1,7 @@
-<form ng-controller="FlashFormController" name="FlashForm" novalidate ng-submit="" ng-minlength="10">
+<form ng-controller="FlashFormController" name="FlashForm" novalidate ng-submit="FlashForm.$valid && submitFlashForm(formObj)">
 {{ formObj | json }}<br/>
 <label>Question</label><br/>
-<input size="50" type="text" ng-model="formObj.question" required><br/>
+<input size="50" type="text" ng-model="formObj.question" required ng-minlength="10"><br/>
 
 <label>Category</label><br/>
 <select type="text" ng-model="formObj.category" required>
@@ -19,10 +19,8 @@ Answers: <br/>
   <label>False</label><input type="radio" ng-model="formObj.answers[n].correct" ng-value="false"><br/>
 </div>
 
-<input type="submit" ng-click="FlashForm.$valid && submitFlashForm(formObj)" value="Save">
+<input type="submit" value="Save">
 
 <pre ng-show="FlashForm.$error">Ready to Submit? {{FlashForm.$valid}}</pre>
 
 </form>
-
-<!-- things to tackle: minlength isn't erroring  -->
