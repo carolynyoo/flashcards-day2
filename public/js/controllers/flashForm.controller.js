@@ -4,13 +4,11 @@ app.controller('FlashFormController', function ($scope, FlashFormFactory) {
     question: null,
     category: null,
     answers: [
-      {correct: false}, 
-      {correct: false}, 
-      {correct: false}
+      {text: null, correct: false}, 
+      {text: null, correct: false}, 
+      {text: null, correct: false}
     ]
   }; 
-
-  
 
   $scope.changeAnswer = function (index) {
     for (var i=0; i<$scope.formObj.answers.length; i++) {
@@ -23,7 +21,6 @@ app.controller('FlashFormController', function ($scope, FlashFormFactory) {
   }
 
   $scope.submitFlashForm = function (flashData) {
-
     FlashFormFactory.sendFlashCard(flashData).then(function (response) {
       console.log(response);
     }).catch(function (err) {

@@ -1,15 +1,19 @@
 <form ng-controller="FlashFormController" name="FlashForm" novalidate ng-submit="FlashForm.$valid && submitFlashForm(formObj)">
-{{ formObj | json }}<br/>
+<!-- <pre>{{ formObj | json }}</pre>> -->
 <label>Question</label><br/>
-<input size="50" type="text" ng-model="formObj.question" required ng-minlength="10"><br/>
+<input name="question" size="50" type="text" ng-model="formObj.question" required ng-minlength="10">
+<span class="error" ng-show="FlashForm.question.$invalid && FlashForm.question.$touched">Question is not valid</span>
+<br/>
 
 <label>Category</label><br/>
-<select type="text" ng-model="formObj.category" required>
+<select name="category" type="text" ng-model="formObj.category" required>
 <option>MongoDB</option>
 <option>Express</option>
 <option>Angular</option>
 <option>Node</option>
-</select><br/>
+</select>
+<span class="error" ng-show="FlashForm.category.$invalid && FlashForm.category.$touched">Please pick a category</span>
+<br/>
 Answers: <br/>
 
 <div ng-repeat="n in [0, 1, 2]">
@@ -20,7 +24,4 @@ Answers: <br/>
 </div>
 
 <input type="submit" value="Save">
-
-<pre ng-show="FlashForm.$error">Ready to Submit? {{FlashForm.$valid}}</pre>
-
 </form>
